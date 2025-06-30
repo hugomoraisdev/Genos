@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Genos</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo-container" onclick="voltarDashboard()" style="cursor: pointer;">
+      <img src="Imagens/Imagem do WhatsApp de 2025-06-26 à(s) 13.11.46_a949c76a.jpg" alt="Logo Genos" class="logo" />
+    </div>
+    <div class="menu-hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="menu" class="hidden">
+      <a href="#" onclick="showPage('dashboard')">Dashboard</a>
+      <a href="#" onclick="showPage('form')">Formulário</a>
+      <a href="#" onclick="showPage('relatorio')">Relatório</a>
+      <a href="#" class="admin-only" onclick="showPage('ajustes')">Ajustes</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="page">
+      <div class="metrics" id="metrics"></div>
+      <canvas id="conversionChart" style="max-width: 100%; margin-top: 2rem;"></canvas>
+    </section>
+
+    <!-- FORMULÁRIO -->
+    <section id="form" class="page hidden">
+      <form id="dataForm">
+        <label>Data: <input type="date" name="data" required /></label>
+        <label>Operador: <input type="text" name="operador" required /></label>
+        <label>Captações: <input type="number" name="captacoes" required /></label>
+        <label>Abordagens: <input type="number" name="abordagens" required /></label>
+        <label>Agendamentos: <input type="number" name="agendamentos" required /></label>
+        <label>Reuniões realizadas: <input type="number" name="reunioes" /></label>
+        <label>Vendas: <input type="number" name="vendas" /></label>
+        <button type="submit">Salvar</button>
+      </form>
+    </section>
+
+    <!-- RELATÓRIO -->
+    <section id="relatorio" class="page hidden">
+      <h2>Relatórios Avançados</h2>
+
+      <div class="relatorio-bloco">
+        <h3>Métricas Diárias</h3>
+        <canvas id="graficoDiario"></canvas>
+        <div id="relatorio-diario"></div>
+      </div>
+
+      <div class="relatorio-bloco">
+        <h3>Métricas Semanais</h3>
+        <canvas id="graficoSemanal"></canvas>
+        <div id="relatorio-semanal"></div>
+      </div>
+
+      <div class="relatorio-bloco">
+        <h3>Métricas Mensais</h3>
+        <canvas id="graficoMensal"></canvas>
+        <div id="relatorio-mensal"></div>
+      </div>
+    </section>
+
+    <!-- AJUSTES -->
+    <section id="ajustes" class="page hidden">
+      <h2>Ajustar Lançamentos</h2>
+      <div id="ajustes-container"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
